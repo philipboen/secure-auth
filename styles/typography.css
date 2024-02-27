@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .display-bold {
+    @apply font-serif font-black text-[56px] leading-[120%] capitalize;
+    font-feature-settings:
+      "ss02" on,
+      "ss03" on,
+      "liga" off;
+  }
+
+  .title-black {
+    @apply font-serif font-black text-[32px];
+  }
+
+  .title-bold {
+    @apply font-serif font-bold text-[32px];
+  }
+
+  .title-semibold {
+    @apply font-serif font-semibold text-[32px];
+  }
+
+  .title-medium {
+    @apply font-serif font-medium text-[32px];
+  }
+
+  .h1-black {
+    @apply font-serif font-black text-[28px];
+  }
+
+  .h1-bold {
+    @apply font-serif font-bold text-[28px];
+  }
+
+  .h1-semibold {
+    @apply font-serif font-semibold text-[28px];
+  }
+
+  .h1-medium {
+    @apply font-serif font-medium text-[28px];
+  }
+
+  .h2-black {
+    @apply font-serif font-black text-[24px];
+  }
+
+  .h2-bold {
+    @apply font-serif font-bold text-[24px];
+  }
+
+  .h2-semibold {
+    @apply font-serif font-semibold text-[24px];
+  }
+
+  .h2-medium {
+    @apply font-serif font-medium text-[24px];
+  }
+
+  .h3-black {
+    @apply font-serif font-black text-[20px];
+  }
+
+  .h3-bold {
+    @apply font-serif font-bold text-[20px];
+  }
+
+  .h3-semibold {
+    @apply font-serif font-semibold text-[20px];
+  }
+
+  .h3-medium {
+    @apply font-serif font-medium text-[20px];
+  }
+
+  .lg-bold {
+    @apply font-sans font-bold text-[18px];
+  }
+
+  .lg-semibold {
+    @apply font-sans font-semibold text-[18px];
+  }
+
+  .lg-medium {
+    @apply font-sans font-medium text-[18px];
+  }
+
+  .lg-regular {
+    @apply font-sans font-normal text-[18px];
+  }
+
+  .base-bold {
+    @apply font-sans font-bold text-[16px];
+  }
+
+  .base-semibold {
+    @apply font-sans font-semibold text-[16px];
+  }
+
+  .base-medium {
+    @apply font-sans font-medium text-[16px];
+  }
+
+  .base-regular {
+    @apply font-sans font-normal text-[16px];
+  }
+
+  .sm-bold {
+    @apply font-sans font-bold text-[14px];
+  }
+
+  .sm-semibold {
+    @apply font-sans font-semibold text-[14px];
+  }
+
+  .sm-medium {
+    @apply font-sans font-medium text-[14px];
+  }
+
+  .sm-regular {
+    @apply font-sans font-normal text-[14px];
+  }
+
+  .sm-light {
+    @apply font-sans font-light text-[14px];
+  }
+
+  .xs-bold {
+    @apply font-sans font-bold text-[12px];
+  }
+
+  .xs-semibold {
+    @apply font-sans font-semibold text-[12px];
+  }
+
+  .xs-medium {
+    @apply font-sans font-medium text-[12px];
+  }
+
+  .xs-regular {
+    @apply font-sans font-normal text-[12px];
+  }
+
+  .xs-light {
+    @apply font-sans font-light text-[12px];
+  }
+
+  .caption-bold {
+    @apply font-sans font-bold text-[10px];
+  }
+
+  .caption-semibold {
+    @apply font-sans font-semibold text-[10px];
+  }
+
+  .caption-medium {
+    @apply font-sans font-medium text-[10px];
+  }
+
+  .caption-regular {
+    @apply font-sans font-normal text-[10px];
+  }
+
+  .caption-light {
+    @apply font-sans font-light text-[10px];
+  }
+
+  /* Button */
+  .btn-lg-bold {
+    @apply font-serif font-bold text-[18px];
+  }
+
+  .btn-lg-semibold {
+    @apply font-serif font-semibold text-[18px];
+  }
+
+  .btn-lg-medium {
+    @apply font-serif font-medium text-[18px];
+  }
+
+  .btn-lg-regular {
+    @apply font-serif font-normal text-[18px];
+  }
+
+  .btn-base-bold {
+    @apply font-serif font-bold text-[16px];
+  }
+
+  .btn-base-semibold {
+    @apply font-serif font-semibold text-[16px];
+  }
+
+  .btn-base-medium {
+    @apply font-serif font-medium text-[16px];
+  }
+
+  .btn-base-regular {
+    @apply font-serif font-normal text-[16px];
+  }
+
+  .btn-sm-bold {
+    @apply font-serif font-bold text-[14px];
+  }
+
+  .btn-sm-semibold {
+    @apply font-serif font-semibold text-[14px];
+  }
+
+  .btn-sm-medium {
+    @apply font-serif font-medium text-[14px];
+  }
+
+  .btn-sm-regular {
+    @apply font-serif font-normal text-[14px];
+  }
+
+  .btn-xs-bold {
+    @apply font-serif font-bold text-[12px];
+  }
+
+  .btn-xs-semibold {
+    @apply font-serif font-semibold text-[12px];
+  }
+
+  .btn-xs-medium {
+    @apply font-serif font-medium text-[12px];
+  }
+
+  .btn-xs-regular {
+    @apply font-serif font-normal text-[12px];
+  }
+}

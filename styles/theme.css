@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Custom Themes */
+  .bg-color {
+    @apply bg-[#121212];
+  }
+
+  .text-color {
+    @apply text-[#DEDEDE];
+  }
+
+  .text-dark-color {
+    @apply text-[#ABABAB];
+  }
+}

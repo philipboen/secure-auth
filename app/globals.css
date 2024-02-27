@@ -1,0 +1,157 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("../styles/theme.css");
+@import url("../styles/typography.css");
+
+html,
+body,
+:root {
+  height: 100%;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  :root {
+    --font-satoshi: "Satoshi", ui-sans-serif, system-ui, -apple-system,
+      "Segoe UI", sans-serif;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings:
+      "ss03" on,
+      "liga" off;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .max-container {
+    @apply mx-auto max-w-[1600px]; /* 1600px | 1440px */
+  }
+
+  .flexStart {
+    @apply flex justify-start items-center;
+  }
+
+  .flexBetween {
+    @apply flex justify-between items-center;
+  }
+
+  .flexCenter {
+    @apply flex justify-center  items-center;
+  }
+
+  .flexEnd {
+    @apply flex justify-end items-center;
+  }
+
+  .no-focus {
+    @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+  }
+
+  .main-scrollbar::-webkit-scrollbar {
+    @apply w-10 h-3;
+  }
+
+  .main-scrollbar::-webkit-scrollbar-track {
+    @apply bg-[hsl(0,0%,80%)] dark:bg-[#424242];
+  }
+
+  .main-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-[#888] dark:bg-[#686868];
+  }
+
+  .main-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#686868] dark:bg-[hsl(0,0%,51%)];
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 50px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
