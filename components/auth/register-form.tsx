@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
-import { login } from "@/lib/actions/login";
+import { register } from "@/lib/actions/register";
 import { useState, useTransition } from "react";
 
 export const RegisterForm = () => {
@@ -31,6 +31,7 @@ export const RegisterForm = () => {
       name: "",
       email: "",
       password: "",
+      confirmPassword: "",
     },
   });
 
@@ -39,7 +40,7 @@ export const RegisterForm = () => {
     setSuccess("");
 
     startTransition(() => {
-      login(values).then((data) => {
+      register(values).then((data) => {
         setError(data.error);
         setSuccess(data.success);
       });
@@ -54,6 +55,7 @@ export const RegisterForm = () => {
       switchButtonHref="/auth/login"
       switchButtonDescription="Already have an account?"
       showSocial
+      authType="register"
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -104,6 +106,24 @@ export const RegisterForm = () => {
                       {...field}
                       disabled={isPending}
                       placeholder="Enter your password"
+                      type="password"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="font-serif">Confirm Password</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      disabled={isPending}
+                      placeholder="Repeat password"
                       type="password"
                     />
                   </FormControl>

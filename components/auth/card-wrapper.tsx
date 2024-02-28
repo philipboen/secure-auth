@@ -19,6 +19,7 @@ interface CardWrapperProps {
   switchButtonHref: string;
   switchButtonDescription: string;
   showSocial?: boolean;
+  authType?: "login" | "register";
 }
 
 export const CardWrapper = ({
@@ -29,14 +30,22 @@ export const CardWrapper = ({
   switchButtonHref,
   switchButtonDescription,
   showSocial,
+  authType,
 }: CardWrapperProps) => {
   return (
     <Card className="w-full max-w-[500px] px-4 shadow-md max-2xl:mx-auto max-sm:rounded-none max-sm:border-none max-sm:shadow-none">
       <CardHeader>
         <Header title={headerTitle} label={headerLabel} />
       </CardHeader>
+
+      {authType === "register" && showSocial && (
+        <div className="flex items-center p-6 pt-0">
+          <Social />
+        </div>
+      )}
+
       <CardContent>{children}</CardContent>
-      {showSocial && (
+      {authType === "login" && showSocial && (
         <CardFooter>
           <Social />
         </CardFooter>

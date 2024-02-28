@@ -53,6 +53,7 @@ export const LoginForm = () => {
       switchButtonHref="/auth/register"
       switchButtonDescription="Don't have an account?"
       showSocial
+      authType="login"
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
