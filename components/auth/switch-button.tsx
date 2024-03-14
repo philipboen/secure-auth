@@ -6,7 +6,7 @@ import Link from "next/link";
 interface SwitchButtonProps {
   label: string;
   href: string;
-  description: string;
+  description?: string;
 }
 
 export const SwitchButton = ({
