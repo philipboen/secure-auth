@@ -20,6 +20,7 @@ import { FormSuccess } from "@/components/form-success";
 import { login } from "@/lib/actions/login";
 import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 export const LoginForm = () => {
   const searchParams = useSearchParams();
@@ -97,6 +98,11 @@ export const LoginForm = () => {
                       type="password"
                     />
                   </FormControl>
+                  <div className="flex justify-end">
+                    <Button variant="link" className="px-0 text-right" asChild>
+                      <Link href="/auth/reset">Forgot password?</Link>
+                    </Button>
+                  </div>
                   <FormMessage />
                 </FormItem>
               )}

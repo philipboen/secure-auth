@@ -39,7 +39,7 @@ export const VerificationForm = () => {
   }, [handleSubmit]);
 
   return (
-    <div className="flex h-[70vh] items-center justify-center">
+    <div className="flex h-screen items-center justify-center">
       <Card className="w-full max-w-[500px] px-4 shadow-md max-sm:rounded-none max-sm:border-none max-sm:shadow-none">
         <CardContent className="mt-6">
           <p className="h2-bold text-center">Confirming your verification</p>

@@ -6,6 +6,6 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="center-2xl max-2xl:py-10">{children}</div>
+    <div className="center-2xl">{children}</div>
   );
 }
