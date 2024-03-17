@@ -5,10 +5,10 @@ import { signIn } from "@/auth";
 import { LoginSchema } from "@/lib/validations";
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 import { AuthError } from "next-auth";
-import { generateVerificationToken } from "@/lib/actions/tokens";
+import { generateVerificationToken } from "@/lib/services/tokens";
 import { getUserByEmail } from "@/lib/data/user";
 import bcrypt from "bcryptjs"
-import { sendVerificationEmail } from "@/lib/actions/mail";
+import { sendVerificationEmail } from "@/lib/services/mail";
 
 export const login = async (values: z.infer<typeof LoginSchema>) => {
     const validatedFields = LoginSchema.safeParse(values);

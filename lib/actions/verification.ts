@@ -20,7 +20,7 @@ export const verification = async (token: string) => {
     const existingUser = await getUserByEmail(existingToken.email);
 
     if (!existingUser) {
-        return { error: "User does not exist!" }
+        return { error: "User not found!" }
     }
 
     await db.user.update({
