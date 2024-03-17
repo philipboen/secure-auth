@@ -52,71 +52,67 @@ export const NewPasswordForm = () => {
   };
 
   return (
-    <div className="flex h-screen items-center justify-center">
-      <Card className="w-full max-w-[500px] px-6 shadow-md max-sm:rounded-none max-sm:border-none max-sm:shadow-none">
-        <CardHeader className="px-0">
-          <div className="w-full">
-            <h1 className="h1-bold">Reset your password</h1>
-            <p className="text-base text-muted-foreground">
-              Enter your new password below
-            </p>
+    <Card className="w-full max-w-[500px] px-6 shadow-md max-sm:rounded-none max-sm:border-none max-sm:shadow-none">
+      <CardHeader className="px-0">
+        <div className="w-full">
+          <h1 className="h1-bold">Reset your password</h1>
+          <p className="text-base text-muted-foreground">
+            Enter your new password below
+          </p>
+        </div>
+      </CardHeader>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <div className="space-y-4">
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="font-serif">Password</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      disabled={isPending}
+                      placeholder="Enter your password"
+                      type="password"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="font-serif">Confirm Password</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      disabled={isPending}
+                      placeholder="Repeat password"
+                      type="password"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
           </div>
-        </CardHeader>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div className="space-y-4">
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="font-serif">Password</FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        disabled={isPending}
-                        placeholder="Enter your password"
-                        type="password"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="confirmPassword"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="font-serif">
-                      Confirm Password
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        disabled={isPending}
-                        placeholder="Repeat password"
-                        type="password"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <FormError message={error} />
-            <FormSuccess message={success} />
-            <Button type="submit" disabled={isPending} className="w-full">
-              Reset password
-            </Button>
-          </form>
-        </Form>
-        <CardFooter className="mt-4 flex items-center justify-center">
-          <Button variant="link" className="px-2" asChild>
-            <Link href="/auth/login">Back to Login</Link>
+          <FormError message={error} />
+          <FormSuccess message={success} />
+          <Button type="submit" disabled={isPending} className="w-full">
+            Reset password
           </Button>
-        </CardFooter>
-      </Card>
-    </div>
+        </form>
+      </Form>
+      <CardFooter className="mt-4 flex items-center justify-center">
+        <Button variant="link" className="px-2" asChild>
+          <Link href="/auth/login">Back to Login</Link>
+        </Button>
+      </CardFooter>
+    </Card>
   );
 };

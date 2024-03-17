@@ -2,7 +2,7 @@ import { LoginForm } from "@/components/auth/login-form";
 
 export default function Page() {
   return (
-    <div className="max-2xl:py-10">
+    <div className="flex min-h-screen items-center justify-center">
       <LoginForm />
     </div>
   );

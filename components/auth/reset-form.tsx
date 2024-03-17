@@ -47,51 +47,49 @@ export const ResetForm = () => {
   };
 
   return (
-    <div className="flex h-screen items-center justify-center">
-      <Card className="w-full max-w-[500px] px-6 shadow-md max-sm:rounded-none max-sm:border-none max-sm:shadow-none">
-        <CardHeader className="px-0">
-          <div className="w-full">
-            <h1 className="h1-bold">Forgot your password?</h1>
-            <p className="text-base text-muted-foreground">
-              Provide the email you want to reset password.
-            </p>
+    <Card className="w-full max-w-[500px] px-6 shadow-md max-sm:rounded-none max-sm:border-none max-sm:shadow-none">
+      <CardHeader className="px-0">
+        <div className="w-full">
+          <h1 className="h1-bold">Forgot your password?</h1>
+          <p className="text-base text-muted-foreground">
+            Provide the email you want to reset password.
+          </p>
+        </div>
+      </CardHeader>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <div className="space-y-4">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="font-serif">Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      disabled={isPending}
+                      placeholder="Enter your email address"
+                      type="email"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
           </div>
-        </CardHeader>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div className="space-y-4">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="font-serif">Email</FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        disabled={isPending}
-                        placeholder="Enter your email address"
-                        type="email"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <FormError message={error} />
-            <FormSuccess message={success} />
-            <Button type="submit" disabled={isPending} className="w-full">
-              Submit
-            </Button>
-          </form>
-        </Form>
-        <CardFooter className="mt-4 flex items-center justify-center">
-          <Button variant="link" className="px-2" asChild>
-            <Link href="/auth/login">Back to Login</Link>
+          <FormError message={error} />
+          <FormSuccess message={success} />
+          <Button type="submit" disabled={isPending} className="w-full">
+            Submit
           </Button>
-        </CardFooter>
-      </Card>
-    </div>
+        </form>
+      </Form>
+      <CardFooter className="mt-4 flex items-center justify-center">
+        <Button variant="link" className="px-2" asChild>
+          <Link href="/auth/login">Back to Login</Link>
+        </Button>
+      </CardFooter>
+    </Card>
   );
 };

@@ -39,22 +39,20 @@ export const VerificationForm = () => {
   }, [handleSubmit]);
 
   return (
-    <div className="flex h-screen items-center justify-center">
-      <Card className="w-full max-w-[500px] px-4 shadow-md max-sm:rounded-none max-sm:border-none max-sm:shadow-none">
-        <CardContent className="mt-6">
-          <p className="h2-bold text-center">Confirming your verification</p>
-          <div className="my-4 flex w-full items-center justify-center">
-            {!success && !error && <BeatLoader />}
-            <FormError message={error} />
-            <FormSuccess message={success} />
-          </div>
-        </CardContent>
-        <CardFooter className="flex items-center justify-center">
-          <Button variant="link" className="px-2" asChild>
-            <Link href="/auth/login">Back to Login</Link>
-          </Button>
-        </CardFooter>
-      </Card>
-    </div>
+    <Card className="w-full max-w-[500px] px-4 shadow-md max-sm:rounded-none max-sm:border-none max-sm:shadow-none">
+      <CardContent className="mt-6">
+        <p className="h2-bold text-center">Confirming your verification</p>
+        <div className="my-4 flex w-full items-center justify-center">
+          {!success && !error && <BeatLoader />}
+          <FormError message={error} />
+          <FormSuccess message={success} />
+        </div>
+      </CardContent>
+      <CardFooter className="flex items-center justify-center">
+        <Button variant="link" className="px-2" asChild>
+          <Link href="/auth/login">Back to Login</Link>
+        </Button>
+      </CardFooter>
+    </Card>
   );
 };

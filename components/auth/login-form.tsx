@@ -96,12 +96,12 @@ export const LoginForm = () => {
                       type="password"
                     />
                   </FormControl>
+                  <FormMessage />
                   <div className="flex justify-end">
                     <Button variant="link" className="px-0 text-right" asChild>
                       <Link href="/auth/reset">Forgot password?</Link>
                     </Button>
                   </div>
-                  <FormMessage />
                 </FormItem>
               )}
             />
