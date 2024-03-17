@@ -15,7 +15,7 @@ export const SwitchButton = ({
   description,
 }: SwitchButtonProps) => {
   return (
-    <div className="flex items-baseline">
+    <div className="flex items-baseline px-6">
       <p className="text-sm">{description}</p>
       <Button variant="link" className="px-2" asChild>
         <Link href={href}>{label}</Link>

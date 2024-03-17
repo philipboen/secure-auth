@@ -1,12 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Header } from "@/components/auth/header";
 import { Social } from "@/components/auth/social";
 import { SwitchButton } from "@/components/auth/switch-button";
@@ -18,8 +13,6 @@ interface CardWrapperProps {
   switchButtonLabel: string;
   switchButtonHref: string;
   switchButtonDescription: string;
-  showSocial?: boolean;
-  authType?: "login" | "register";
 }
 
 export const CardWrapper = ({
@@ -29,8 +22,6 @@ export const CardWrapper = ({
   switchButtonLabel,
   switchButtonHref,
   switchButtonDescription,
-  showSocial,
-  authType,
 }: CardWrapperProps) => {
   return (
     <Card className="w-full max-w-[500px] px-4 shadow-md max-2xl:mx-auto max-sm:rounded-none max-sm:border-none max-sm:shadow-none">
@@ -38,25 +29,22 @@ export const CardWrapper = ({
         <Header title={headerTitle} label={headerLabel} />
       </CardHeader>
 
-      {authType === "register" && showSocial && (
-        <div className="flex items-center p-6 pt-0">
-          <Social />
-        </div>
-      )}
+      <div className="flex items-center p-6 pt-0">
+        <Social />
+      </div>
+      <SwitchButton
+        label={switchButtonLabel}
+        description={switchButtonDescription}
+        href={switchButtonHref}
+      />
+
+      <div className="flex gap-2 px-6 py-2">
+        <div className="h-[1px] w-full self-center bg-slate-400" />
+        <p className="text-slate-400">or</p>
+        <div className="h-[1px] w-full self-center bg-slate-400" />
+      </div>
 
       <CardContent>{children}</CardContent>
-      {authType === "login" && showSocial && (
-        <CardFooter>
-          <Social />
-        </CardFooter>
-      )}
-      <CardFooter>
-        <SwitchButton
-          label={switchButtonLabel}
-          description={switchButtonDescription}
-          href={switchButtonHref}
-        />
-      </CardFooter>
     </Card>
   );
 };

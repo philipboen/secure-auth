@@ -54,8 +54,6 @@ export const RegisterForm = () => {
       switchButtonLabel="Sign in"
       switchButtonHref="/auth/login"
       switchButtonDescription="Already have an account?"
-      showSocial
-      authType="register"
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
