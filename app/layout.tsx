@@ -2,6 +2,8 @@ import "./globals.css";
 import React from "react";
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
+import { SessionProvider } from "next-auth/react";
+import { auth } from "@/auth";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -16,15 +18,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await auth();
+
   return (
     <html lang="en">
       <body className={`${figtree.variable} max-container font-sans`}>
-        {children}
+        <SessionProvider session={session}>{children}</SessionProvider>
       </body>
     </html>
   );

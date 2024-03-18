@@ -1,21 +1,23 @@
-import { auth, signOut } from "@/auth";
-import { Button } from "@/components/ui/button";
+"use client";
 
-const SettingsPage = async () => {
-  const session = await auth();
+import { Button } from "@/components/ui/button";
+import { logout } from "@/lib/actions/logout";
+import { useCurrentUser } from "@/hooks/use-current-user";
+
+const SettingsPage = () => {
+  const user = useCurrentUser();
+
+  const handleSignOut = () => {
+    logout();
+  };
 
   return (
-    <div>
-      {JSON.stringify(session)}
-      <form
-        action={async () => {
-          "use server";
+    <div className="flex flex-col">
+      {/* {JSON.stringify(user)} */}
 
-          await signOut();
-        }}
-      >
-        <Button type="submit">Sign out</Button>
-      </form>
+      <Button type="submit" onClick={handleSignOut} className="w-fit">
+        Sign out
+      </Button>
     </div>
   );
 };
