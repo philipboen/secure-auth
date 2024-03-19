@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
+import { Toaster } from "@/components/ui/sonner";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -28,7 +29,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${figtree.variable} max-container font-sans`}>
-        <SessionProvider session={session}>{children}</SessionProvider>
+        <SessionProvider session={session}>
+          <Toaster />
+          {children}
+        </SessionProvider>
       </body>
     </html>
   );
