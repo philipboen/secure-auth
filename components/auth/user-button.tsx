@@ -14,7 +14,7 @@ import { LogoutButton } from "@/components/auth/logout-button";
 
 export const UserButton = () => {
   const user = useCurrentUser();
-  const initials = getInitials(user?.name);
+  const initials = getInitials(user?.name ?? "");
 
   return (
     <DropdownMenu>
@@ -30,7 +30,7 @@ export const UserButton = () => {
         <LogoutButton>
           <DropdownMenuItem className="focus:bg-destructive/85 focus:text-white">
             <ExitIcon className="mr-2 size-4" />
-            Logout
+            Log out
           </DropdownMenuItem>
         </LogoutButton>
       </DropdownMenuContent>
