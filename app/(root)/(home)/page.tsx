@@ -9,7 +9,7 @@ export default function Page() {
           SecureAuth <span className="text-[38px]">🔑</span>
         </h1>
         <p className="text-lg">A simple authentication service</p>
-        <LoginButton>
+        <LoginButton asChild>
           <Button size="lg" className="rounded-full">
             Sign In
           </Button>
