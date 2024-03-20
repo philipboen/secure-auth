@@ -116,7 +116,7 @@ export const RegisterForm = () => {
               name="confirmPassword"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="font-serif">Confirm Password</FormLabel>
+                  <FormLabel className="font-serif">Confirm password</FormLabel>
                   <FormControl>
                     <Input
                       {...field}
