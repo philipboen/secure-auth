@@ -10,7 +10,8 @@ export const Navbar = () => {
 
   return (
     <nav className="flex w-full max-w-[600px] flex-wrap items-center justify-between rounded-xl border bg-card p-4 text-card-foreground shadow">
-      <div className="flex flex-wrap gap-x-2">
+      <div className="h3-bold sm:hidden">Secure Auth</div>
+      <div className="flex flex-wrap gap-x-2 max-sm:hidden">
         <Button
           asChild
           variant={pathname === "/server" ? "default" : "outline"}
